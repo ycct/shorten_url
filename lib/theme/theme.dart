@@ -6,14 +6,17 @@ class CustomThemeData {
   static  Color backgroundColor = Colors.grey.shade50;
 
   static ThemeData lightTheme = ThemeData(
+    progressIndicatorTheme: const ProgressIndicatorThemeData(color: primaryColor),
     appBarTheme: const AppBarTheme(backgroundColor: primaryColor),
     errorColor: Colors.red,
+    dividerColor: Colors.black,
+    primaryColorDark: Colors.black,
+    backgroundColor: Colors.deepPurple,
     inputDecorationTheme: const InputDecorationTheme(
       hintStyle: TextStyle(
         color: primaryColor,
       ),
     ),
-    primarySwatch: Colors.blue,
     primaryColor: primaryColor,
     disabledColor: secondaryColor,
     scaffoldBackgroundColor: backgroundColor,

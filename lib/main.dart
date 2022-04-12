@@ -5,7 +5,7 @@ import 'package:shorten_url/utils/bindings.dart';
 import 'package:shorten_url/utils/routes.dart';
 import 'package:shorten_url/theme/theme.dart';
 import 'package:shorten_url/utils/translation.dart';
-import 'package:shorten_url/views/home_view.dart';
+import 'package:shorten_url/views/home_view/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         locale: const Locale("en", "US"),
         fallbackLocale: const Locale('en', 'UK'),
         translations: Translation(),
-        home:  HomeView(),
+        home:  const HomeView(),
         theme: CustomThemeData.lightTheme);
   }
 }

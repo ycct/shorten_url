@@ -9,3 +9,4 @@ class HomeViewBinding implements Bindings {
     );
   }
 }
+
