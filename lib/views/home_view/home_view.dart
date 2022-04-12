@@ -25,7 +25,13 @@ class HomeView extends StatelessWidget {
                   flex: 3,
                   child: homeController.shortenList.isEmpty
                       ? buildSvgPicture(context)
-                      : const CustomCard(),
+                      : Column(
+                          children: [
+                            context.sizedBoxHeightLarge,
+                            buildHeader(context),
+                            const CustomCard(),
+                          ],
+                        ),
                 ),
                 Expanded(
                   child: buildBottomBar(context, homeController),
@@ -38,28 +44,40 @@ class HomeView extends StatelessWidget {
     });
   }
 
+  Text buildHeader(BuildContext context) {
+    return Text(
+      "history".tr,
+      style: Theme.of(context).textTheme.headline6!.copyWith(
+            color: Colors.black,
+          ),
+    );
+  }
+
   Widget buildSvgPicture(BuildContext context) {
     return Column(
       children: [
         context.sizedBoxHeightExtraLarge,
-        context.sizedBoxHeightExtraSmall,
-        SvgPicture.asset(
-          ImagePaths.backgroundImage,
+        Expanded(flex: 8,
+          child: SvgPicture.asset(
+            ImagePaths.backgroundImage,
+          ),
         ),
         Text(
           "started".tr,
           style: Theme.of(context)
               .textTheme
               .headline6!
-              .copyWith(color: Theme.of(context).primaryColorDark),
+              .copyWith(color: Colors.black),
         ),
         context.sizedBoxHeightUltraSmall,
         Text(
           "pasteLink".tr,
-          style: Theme.of(context).textTheme.headline6!.copyWith(
-              color: Theme.of(context).primaryColorDark.withOpacity(0.5),
-              fontWeight: FontWeight.normal),
-        )
+          style: Theme.of(context)
+              .textTheme
+              .headline6!
+              .copyWith(fontWeight: FontWeight.normal, color: Colors.black),
+        ),
+        Spacer(),
       ],
     );
   }

@@ -14,12 +14,13 @@ class CustomCard extends StatelessWidget {
       builder: (HomeController homeController) {
         return SizedBox(
           width: context.dynamicWidth(0.8),
+          height: context.dynamicHeight(0.6),
           child: ListView.builder(
             itemCount: homeController.shortenList.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding:
-                    EdgeInsets.symmetric(vertical: context.paddingSmallHeight),
+                    EdgeInsets.only(bottom: context.paddingSmallHeight),
                 child: Container(
                   height: context.dynamicHeight(0.22),
                   child: homeController.mainDataModel != null

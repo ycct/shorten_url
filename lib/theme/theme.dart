@@ -23,7 +23,7 @@ class CustomThemeData {
     textTheme: const TextTheme(
       headline4: TextStyle(fontWeight: FontWeight.bold),
       headline5: TextStyle(fontWeight: FontWeight.bold),
-      headline6: TextStyle(fontWeight: FontWeight.bold),
+      headline6: TextStyle(fontWeight: FontWeight.bold,color: Colors.red),
       subtitle1: TextStyle(letterSpacing: 0),
       subtitle2: TextStyle(letterSpacing: 0),
       bodyText1: TextStyle(letterSpacing: 0,fontWeight: FontWeight.bold),
